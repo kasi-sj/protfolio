@@ -20,7 +20,7 @@ const ProjectData = [
         description:"It is a portfolio website which is made using react and tailwindcss.",
         image : "/project2.png",
         git:"https://github.com/kasi-sj/protfolio-1",
-        previewURL:"https://protfolio-1-23vtrczfk-kasi-sj.vercel.app/",
+        previewURL:"https://protfolio-1-hp0qmw3h4-kasi-sj.vercel.app/",
         tag:["All" , "Web"]
     },
     {
