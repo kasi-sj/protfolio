@@ -1,15 +1,17 @@
 'use client'
-import React, { useState } from 'react'
 import {CodeBracketIcon , EyeIcon } from "@heroicons/react/24/outline"
 import Link from 'next/link'
+import { useState,useRef } from 'react'
+import { motion , useInView } from 'framer-motion'
+
 const ProjectData = [
     {
         id:1,
         title:"react Promptopia Website",
         description:"project1 description",
         image:"/project1.png",
-        git:"",
-        previewURL:"",
+        git:"https://github.com/kasi-sj/promtopia",
+        previewURL:"https://promtopia-11nm8sa4w-kasi-sj.vercel.app/",
         tag: ["All" , "Web"]
     },
     {
@@ -17,7 +19,7 @@ const ProjectData = [
         title:'react Portfolio Website',
         description:"project2 description",
         image : "/project1.png",
-        git:"",
+        git:"https://github.com/kasi-sj/protfolio-1",
         previewURL:"",
         tag:["All" , "Web"]
     },
@@ -26,15 +28,15 @@ const ProjectData = [
         title:"react Nike clone",
         description:"project3 description",
         image:"/project2.png",
-        git:"",
-        previewURL:"",
+        git:"https://github.com/kasi-sj/nike-c",
+        previewURL:"https://nike-c-cx3b-o9j833kun-kasi-sj.vercel.app/",
         tag:["All" , "Web" , "Ui/Ux"]
     }
 ]
 
 const ProjectCard = ({ imgUrl , title , description , gitURL , previewURL}) => {
   return (
-    <div className='p-4 w-[400px]'>
+    <div className='p-4 w-[400px]' >
     <div className='h-52 md:h-72 rounded-t-xl relative group' style={
         {
             background:`url(${imgUrl})` ,
@@ -61,7 +63,7 @@ const ProjectCard = ({ imgUrl , title , description , gitURL , previewURL}) => {
 }
 
 const ProjectTag = ({name , onClink , isSelected}) => {
-    const buttonStyle = isSelected ? "text-white bg-purple-500":"text-[#ADB7BE] border-slate-600 hover:border-white"
+    const buttonStyle = isSelected ? "text-white bg-primary-500":"text-[#ADB7BE] border-slate-600 hover:border-white"
     return(
         <button onClick={onClink} className={` rounded-full border-2 px-6 py-3 cursor-pointer ${buttonStyle}`}>{name}</button>
     )
@@ -69,10 +71,25 @@ const ProjectTag = ({name , onClink , isSelected}) => {
 
 const ProjectSection = () =>{
     const [tag , setTag] = useState("All");
+    const ref = useRef(null);
+    const inView = useInView(ref,{once:true});
     const handleTagChange  = (newTag) => {
         setTag(newTag);
     };
+
+    const cardVariants = {
+        initial:{
+            opacity:0,
+            y:100
+        },  
+        animate:{
+            opacity:1,
+            y:0,
+        }   
+    }
+
     return (
+        <section id="projects" >
         <div >
             <h2 className='text-4xl font-bold text-white mb-4 mt-10 text-center' >My Projects</h2>
             <div className='text-white flex justify-center items-center gap-2 py-6'>
@@ -80,10 +97,14 @@ const ProjectSection = () =>{
                 <ProjectTag name={"Web"} onClink={()=>handleTagChange("Web")} isSelected={tag=="Web"}/>
                 <ProjectTag name={"Ui/Ux"} onClink={()=>handleTagChange("Ui/Ux")} isSelected={tag=="Ui/Ux"}/>
             </div>
-            <div className='flex flex-wrap justify-center' >{ProjectData.map((data)=>(
-                data.tag.includes(tag) && <ProjectCard key={data.id} title={data.title} imgUrl={data.image} description={data.description} gitURL={data.git} previewURL={data.previewURL}/>
-            ))}</div>
+            <ul  ref={ref} className='flex flex-wrap justify-center' >{ProjectData.map((data , index)=>(
+                data.tag.includes(tag) &&
+                <motion.li variants={cardVariants} initial="initial" animate={inView ? "animate" : "initial"} transition={{duration:0.3,delay:index*0.4}} key={data.id} >
+                    <ProjectCard  title={data.title} imgUrl={data.image} description={data.description} gitURL={data.git} previewURL={data.previewURL}/>
+                </motion.li>
+            ))}</ul>
         </div>
+        </section>
     )
 }
 

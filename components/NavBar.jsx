@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 
 import { useState, useTransition } from 'react'
 import { Bars3Icon , XMarkIcon } from "@heroicons/react/24/solid"
@@ -22,9 +23,11 @@ const navLink = [
 const Nav = () => {
   const [navBarOpen , setNavBarOpen] = useState(false);
   return (
-    <nav className='fixed top-0 left-0 right-0 bg-[#121212] bg-opacity-90 z-10'>
-      <div className=' flex items-center justify-between mx-auto py-4'>
-        <Link href={"/"} className=' text-2xl md:text-5xl mx-5 text-white font-semibold'>Logo</Link>
+    <nav className='fixed top-0 left-0 border border-[#33353F] right-0 bg-[#121212] bg-opacity-90 z-10'>
+      <div className='container lg:py-4 flex items-center justify-between mx-auto py-4'>
+        <Link href={"/"} className=' text-2xl md:text-5xl mx-5 text-white font-semibold'>
+            <Image src="/logo.jpg" height={60} width={60} alt={"logo"} className='rounded-full'/>
+        </Link>
         <div className='menu block md:hidden mx-5'>
             {
                 !navBarOpen ? (

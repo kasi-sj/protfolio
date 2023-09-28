@@ -2,6 +2,7 @@
 import { useState, useTransition } from 'react'
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'  
 
 const TAB_DATA = [
     {
@@ -47,7 +48,7 @@ const AboutSection = () => {
         })
     }
     return (
-        <section className='mt-24'> 
+        <section className='mt-24' id="about"> 
         <div className=' grid grid-cols-2 gap-8'>
             <div className='flex justify-center max-lg:col-span-2 text-center px-10 '>
                 <Image alt="computer" width={500} height={500} src="/computer.jpeg" />
@@ -70,10 +71,20 @@ const AboutSection = () => {
 }
 
 const TabButton = ({active , selectTab , children}) =>{
-    const buttonClasses = active ? 'text-white border-b border-purple-500 ' : 'text-[#ADB7BE]'
+    const buttonClasses = active ? 'text-white  ' : 'text-[#ADB7BE]'
+    const variants = {
+        default:{width:"0%"},
+        active:{width:"calc(100% - 0.75rem)"} 
+    }
     return (
         <button onClick={selectTab} >
-            <p className={`mr-3 font-semibold hover:text-white ${buttonClasses} `} >{children}</p>
+            
+                <p className={`mr-3 font-semibold hover:text-white ${buttonClasses} `} >{children}</p>
+                <motion.div 
+                animate={active ? "active" : "default"}
+                variants={variants}
+                className='h-1 bg-primary-500 rounded-full mt-2 mr-3' 
+            ></motion.div>
         </button>
     )
 }
