@@ -22,7 +22,7 @@ const navLink = [
 const Nav = () => {
   const [navBarOpen , setNavBarOpen] = useState(false);
   return (
-    <nav className='fixed top-0 left-0 right-0 bg-[#121212] bg-opacity-90'>
+    <nav className='fixed top-0 left-0 right-0 bg-[#121212] bg-opacity-90 z-10'>
       <div className=' flex items-center justify-between mx-auto py-4'>
         <Link href={"/"} className=' text-2xl md:text-5xl mx-5 text-white font-semibold'>Logo</Link>
         <div className='menu block md:hidden mx-5'>
