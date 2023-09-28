@@ -18,17 +18,17 @@ const achievements = [
     {
         metric:"LeetCode",
         value:900,
-        postfix:"+ "
+        postfix:"+"
     },
     {
         metric:"CodeChef",
         value:3,
-        postfix:"*"
+        postfix:"★"
     },
     {
         metric:"Hackerrank",
         value:5,
-        postfix:"*"
+        postfix:"★"
     }
 ]
 
