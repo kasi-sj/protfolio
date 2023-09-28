@@ -4,7 +4,7 @@ import * as React from 'react';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
-export async function POST(req,res) {
+export async function POST(req) {
   try {
     const { email , subject, message } = await req.json().body;
     const data = await resend.emails.send({
