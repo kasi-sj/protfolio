@@ -3,7 +3,7 @@ import React from 'react'
 
 import { useState, useTransition } from 'react'
 import { Bars3Icon , XMarkIcon } from "@heroicons/react/24/solid"
-
+import Link from 'next/link'
 const navLink = [
     {
         title:"About",
