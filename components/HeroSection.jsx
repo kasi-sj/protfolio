@@ -4,6 +4,7 @@ import { name , about} from '@/constants'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation';
+import { useRouter } from 'next/navigation'
 
 const ExampleComponent = () => {
   return (
@@ -27,6 +28,7 @@ const ExampleComponent = () => {
 
 const HeroSection = () => {
   const fileId = "1voz8Ws58IzBC9-fHcJx3aK1SqvIpOUgY";
+  const router = useRouter();
   
   const handleDownload = () => {
     const downloadLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
@@ -48,7 +50,7 @@ const HeroSection = () => {
         </h1>
         <p className='text-[#ADB7BE] text-lg lg:text-xl mb-6'>{about}</p>
         <div>
-        <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 mb-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white'>Hire Me</button>
+        <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 mb-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white' onClick={()=>router.push("https://www.linkedin.com/in/kasi-nathan-s-j-211179230")}>Hire Me</button>
         <button className='px-1 py-1 w-full sm:w-fit rounded-full bg-transparent hover:bg-slate-800 text-white border border-white mt-4px  bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500' onClick={handleDownload}>
           <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>
             DownLoad CV
