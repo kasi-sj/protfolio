@@ -18,7 +18,7 @@ const ProjectData = [
         id:2,
         title:'react Portfolio Website',
         description:"It is a portfolio website which is made using react and tailwindcss.",
-        image : "/project2.png",
+        image : "/project3.png",
         git:"https://github.com/kasi-sj/protfolio-1",
         previewURL:"https://protfolio-1-hp0qmw3h4-kasi-sj.vercel.app/",
         tag:["All" , "Web"]
@@ -27,7 +27,7 @@ const ProjectData = [
         id:3,
         title:"react Nike clone",
         description:"It is a clone of nike website which is made using react and tailwindcss.",
-        image:"/project3.png",
+        image:"/project2.png",
         git:"https://github.com/kasi-sj/nike-c",
         previewURL:"https://nike-c-cx3b-o9j833kun-kasi-sj.vercel.app/",
         tag:["All" , "Web" , "Ui/Ux"]
