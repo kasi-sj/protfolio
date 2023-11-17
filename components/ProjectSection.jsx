@@ -12,7 +12,7 @@ const ProjectData = [
         image:"/project1.png",
         git:"https://github.com/kasi-sj/promtopia",
         previewURL:"https://promtopia-11nm8sa4w-kasi-sj.vercel.app/",
-        tag: ["All" , "Web"]
+        tag: ["All" , "Web" ]
     },
     {
         id:2,
@@ -21,7 +21,7 @@ const ProjectData = [
         image : "/project3.png",
         git:"https://github.com/kasi-sj/protfolio-1",
         previewURL:"https://protfolio-1-hp0qmw3h4-kasi-sj.vercel.app/",
-        tag:["All" , "Web"]
+        tag:["All" , "Web" , "Ui/Ux"]
     },
     {
         id:3,
@@ -30,7 +30,16 @@ const ProjectData = [
         image:"/project2.png",
         git:"https://github.com/kasi-sj/nike-c",
         previewURL:"https://nike-c-cx3b-o9j833kun-kasi-sj.vercel.app/",
-        tag:["All" , "Web" , "Ui/Ux"]
+        tag:["All"  , "Ui/Ux"]
+    },
+    {
+        id:4,
+        title:"Job Magnet",
+        description:"JOB SEARCH PLATFORM Utilized NEXT.js for the front end and MongoDB for the database.Users have the flexibility to manually enter job search detailsor opt for automated extraction by uploading their resume. ",
+        image:"/jobMagnet.png",
+        git:"https://github.com/kasi-sj/jobmagnet",
+        previewURL:"https://jobmagnet.vercel.app/",
+        tag:["All" , "Web" , "AI" ]
     }
 ]
 
@@ -96,6 +105,7 @@ const ProjectSection = () =>{
                 <ProjectTag name={"All"} onClink={()=>handleTagChange("All")} isSelected={tag=="All"}/>
                 <ProjectTag name={"Web"} onClink={()=>handleTagChange("Web")} isSelected={tag=="Web"}/>
                 <ProjectTag name={"Ui/Ux"} onClink={()=>handleTagChange("Ui/Ux")} isSelected={tag=="Ui/Ux"}/>
+                <ProjectTag name={"AI"} onClink={()=>handleTagChange("AI")} isSelected={tag=="AI"}/>
             </div>
             <ul  ref={ref} className='flex flex-wrap justify-center' >{ProjectData.map((data , index)=>(
                 data.tag.includes(tag) &&

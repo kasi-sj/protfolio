@@ -10,6 +10,9 @@ const TAB_DATA = [
         id:"skills",
         content: (
             <ul className='list-disc pl-2'>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>Python</li>
                 <li>Node.js</li>
                 <li>Express</li>
                 <li>React.js</li>
@@ -32,7 +35,7 @@ const TAB_DATA = [
         content: (
             <ul className='list-disc pl-2'>
                 <li>Meta Front End Developer</li>
-                <li>Flutter Mobile App Developer</li>
+                <li>Web Development BootCamp </li>
                 <li>Full Stack Developer Udemy</li>
             </ul>
         )
