@@ -7,7 +7,7 @@ import { motion , useInView } from 'framer-motion'
 const ProjectData = [
     {
         id:1,
-        title:"react Promptopia Website",
+        title:"Promptopia Website",
         description:"it is a web application where you can create your own prompt and share it with your friends.",
         image:"/project1.png",
         git:"https://github.com/kasi-sj/promtopia",
@@ -16,7 +16,7 @@ const ProjectData = [
     },
     {
         id:2,
-        title:'react Portfolio Website',
+        title:'Portfolio',
         description:"It is a portfolio website which is made using react and tailwindcss.",
         image : "/project3.png",
         git:"https://github.com/kasi-sj/protfolio-1",
@@ -25,7 +25,7 @@ const ProjectData = [
     },
     {
         id:3,
-        title:"react Nike clone",
+        title:"Nike clone",
         description:"It is a clone of nike website which is made using react and tailwindcss.",
         image:"/project2.png",
         git:"https://github.com/kasi-sj/nike-c",
