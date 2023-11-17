@@ -7,7 +7,7 @@ const AnimatedNumber = dynamic(() => import('react-animated-numbers'), { ssr: fa
 const achievements = [
     {
         metric:"Projects",
-        value:3,
+        value:5,
         postfix:"+"
     },
     {
@@ -22,7 +22,7 @@ const achievements = [
     },
     {
         metric:"CodeChef",
-        value:3,
+        value:4,
         postfix:"★"
     },
     {
