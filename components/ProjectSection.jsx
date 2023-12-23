@@ -81,7 +81,7 @@ const ProjectTag = ({name , onClink , isSelected}) => {
 const ProjectSection = () =>{
     const [tag , setTag] = useState("All");
     const ref = useRef(null);
-    const inView = useInView(ref,{once:true});
+        
     const handleTagChange  = (newTag) => {
         setTag(newTag);
     };
