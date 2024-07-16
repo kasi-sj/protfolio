@@ -12,6 +12,8 @@ yarn dev
 pnpm dev
 ```
 
+![Screenshot 2024-07-16 160515](https://github.com/user-attachments/assets/705316c0-f947-49ec-b213-fce4125292a9)
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
